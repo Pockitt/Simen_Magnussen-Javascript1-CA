@@ -2,7 +2,13 @@ async function getGameHub () {
     const url = "https://api.noroff.dev/api/v1/gamehub";
     const response = await fetch (url);
     const results = await response.json();
+    console.log(results);
+    return results;
 }
+
+let results = await getGameHub ();
+console.log(results);
+
 
 
 // Template - Home/Store product display
@@ -49,11 +55,64 @@ async function getGameHub () {
         </div>
       </div> */}
 
+function makeHTML() {
+   
+   const gameCard = document.querySelector("main")
+   for (let i = 0; i < results.length; i++) {
+     console.log(results[i]);
+     gameCard.innerHTML += ` <div class="card">
+     <figure>
+       <a href="">
+         <img src="${results[i].image}" alt="picture of ${results[i].title}cover" />
+       </a>
+     </figure>
+     <div class="card-details">
+       <h3 class="cardGameTitle">${results[i].title}</h3>
+       <div class="card-images">
+         <figure>
+           <img
+             class="card-images"
+             src="${results[i].image}"
+             alt="picture of ${results[i].title}cover"
+              />
+         </figure>
+         <figure>
+           <img
+             class="card-images"
+             src="${results[i].image}"
+             alt="picture of ${results[i].title}cover"
+            />
+         </figure>
+         <figure>
+           <img
+             class="card-images"
+             src="${results[i].image}"
+             alt="picture of ${results[i].title}cover"
+            />
+         </figure>
+         <figure>
+           <img
+             class="card-images"
+             src="${results[i].image}"
+             alt="picture of ${results[i].title}cover"
+            />
+         </figure>
+       </div>
+         <div class="card-price>
+           <p>"${results[i].price}"</p>
+         </div>
+     </div>
+   </div> `
+   }
+ }
+
+makeHTML();
+
       
 
 // Template - Product page
 
-{/* <h1>Gears of War 3</h1>
+{/* `<h1>Gears of War 3</h1>
       <figure>
         <img src="../images/Gears/cover.jpg" />
       </figure>
@@ -95,4 +154,37 @@ async function getGameHub () {
           <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
           <button class="wishlist">Wishlist</button>
         </div>
-      </section> */}
+      </section>` */}
+
+      // `<h1>${title}</h1>
+      // <figure>
+      //   <img src="../images" />
+      // </figure>
+      // <section class="product-page-pics">
+      //   <figure>
+      //     <img
+      //       src="${results[i].image}"
+      //       alt="picture of ${results[i].title} covercover"
+      //     />
+      //   </figure>
+      //   <figure>
+      //     <img src"${results[i].image}" alt="picture of ${results[i].title} cover" />
+      //   </figure>
+      //   <figure>
+      //     <img src"${results[i].image}" alt="picture of ${results[i].title} cover" />
+      //   </figure>
+      //   <figure>
+      //     <img src"${results[i].image}" alt="picture of ${results[i].title} cover" />
+      //   </figure>
+      // </section>
+      // <p>
+      //   ${results[i].description}
+      // </p>
+      // <section class="cta">
+      //   <h2>Buy ${results[i].title}</h2>
+      //   <div class="price-and-atc">
+      //     <p>${results[i].price}</p>
+      //     <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
+      //     <button class="wishlist">Wishlist</button>
+      //   </div>
+      // </section>` 
