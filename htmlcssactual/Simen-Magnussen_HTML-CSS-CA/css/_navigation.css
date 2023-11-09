@@ -1,0 +1,36 @@
+.nav-list {
+    font-family: "Thuner", "Kanit", Verdana, sans-serif;
+    font-size: x-large;
+    background-color: #132747;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    align-items: flex-end;
+    max-width: 1200px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+    
+.nav-list a {
+    font-family: "Thuner", "Kanit", Verdana, sans-serif;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF
+}
+
+a:hover {
+    color:#16C61D;
+}
+
+a:active {
+    color:#16C61D;
+}

@@ -1,0 +1,84 @@
+.cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.price-and-atc {
+    display: flex;
+    max-width: 380px;
+    flex: 1;
+    flex-wrap: wrap;
+    background-color: #2A323F;
+    justify-content: flex-end;
+}
+
+.wishlist {
+    background-color: #2A323F;
+    color: #FFF;
+}
+
+.price-and-atc p {
+    margin-right: 20px;
+}
+
+.product-reviews {
+    margin-top: 100px;
+}
+
+.reviews-h {
+    margin-left: 20px;
+}
+
+.review {
+    background-color: #2A323F;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.review-text {
+    margin: 0;
+    padding: 0;
+}
+
+.review-text p {
+    background-color: #FFF;
+    color: #000;
+}
+
+.sys-req {
+    display: flex;
+    flex-direction: column;
+    background-color: #00000064;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.sys-req-bar {
+    margin-top: 0px;
+}
+
+.sys {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sys-req-li {
+    font-family: 'Kanit', Verdana, sans-serif;
+    color: #FFF;
+}
+
+.sys-req-li h4 {
+    text-align: start;
+    margin-left: 20px;
+}
