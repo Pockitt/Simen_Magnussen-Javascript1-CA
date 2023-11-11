@@ -1,5 +1,3 @@
-
-
 export async function renderGames(games, parent, heading) {
     parent.innerHTML = "";
     parent.innerHTML = heading;

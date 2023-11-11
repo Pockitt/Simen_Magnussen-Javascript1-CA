@@ -26,4 +26,3 @@ export function renderCollection(data1, data2, data3, parent1, parent2, parent3,
   createHTML(data2, parent2, heading2);
   createHTML(data3, parent3, heading3);
 }
-
