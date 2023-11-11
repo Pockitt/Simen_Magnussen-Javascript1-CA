@@ -10,7 +10,7 @@ import { getGames } from "./data/getGames.js";
 
 // actual case: /collection.html
 switch(location.pathname) {
-  case "/collection.html":
+  case "/collection":
     try {
       renderCollection(favorites, newReleases, fifteen, parentMostPlayed, parentNewGames, allGames, heading1, heading2, heading3)
     } catch (error) {
