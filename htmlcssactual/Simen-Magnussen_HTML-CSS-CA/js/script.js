@@ -1,140 +1,36 @@
+import { newReleases, onSale, favorites } from "./data/filterData.js";
+import { renderHome, parentNewReleases, parentOnSale, parentFanFavorites } from "./pages/home.js";
+import { renderCollection, heading1, heading2, heading3, parentMostPlayed, parentNewGames, allGames } from "./pages/collection.js";
+import { fifteen } from "./data/filterData.js";
+import { heading1Home, heading2Home, heading3Home } from "./pages/home.js";
+import { renderGame } from "./render/renderGame.js";
+import { url } from "./data/constant.js";
+import { getId } from "./data/getID.js";
+import { getGames } from "./data/getGames.js";
 
-// import { renderGames } from "./render/renderGames.js";
-// import { renderGame } from "./render/renderGame.js";
-
-if (window.location.pathname === "index.html") {
-    getGames();
-    renderGames();
-}
-
-if (window.location.pathname === "gears-of-war-3.html") {
-    getAndRenderGame();
-}
-
-
-// getGames.js
-
-export async function getGames () {
+// actual case: /collection.html
+switch(location.pathname) {
+  case "/htmlcssactual/Simen-Magnussen_HTML-CSS-CA/collection.html":
     try {
-        const url = "https://api.noroff.dev/api/v1/gamehub";
-        const response = await fetch (url);
-        const games = await response.json();
-        return games;
+      renderCollection(favorites, newReleases, fifteen, parentMostPlayed, parentNewGames, allGames, heading1, heading2, heading3)
+    } catch (error) {
+      console.log("An error occurred!", error);
     }
-    catch (error) {
-        console.log(error);
-    }
-}
-
-// renderGames.js
-// import { getGames } from "../data/getGames.js"
-   
-export async function renderGames() {
-  const games = await getGames();
-  const gameCard = document.querySelector("main")
-  for (let i = 0; i < games.length; i++) {
-    gameCard.innerHTML += ` <div class="card">
-    <figure>
-      <a href="./product/gears-of-war-3.html?id=${games[i].id}">
-        <img src="${games[i].image}" alt="picture of ${games[i].title} cover" />
-      </a>
-    </figure>
-    <div class="card-details">
-      <h3 class="cardGameTitle">${games[i].title}</h3>
-      <div class="card-images">
-        <figure>
-          <img
-            class="card-images"
-            src="${games[i].image}"
-            alt="picture of ${games[i].title} cover"
-             />
-        </figure>
-        <figure>
-          <img
-            class="card-images"
-            src="${games[i].image}"
-            alt="picture of ${games[i].title} cover"
-           />
-        </figure>
-        <figure>
-          <img
-            class="card-images"
-            src="${games[i].image}"
-            alt="picture of ${games[i].title} cover"
-           />
-        </figure>
-        <figure>
-          <img
-            class="card-images"
-            src="${games[i].image}"
-            alt="picture of ${games[i].title} cover"
-           />
-        </figure>
-      </div>
-      <div class="card-price">
-          <p>$ ${games[i].price}</p>
-      </div>
-    </div>
-  </div> `
-  }
-}
-
-
-//getAndRenderGame.js
-
-export async function getAndRenderGame() {
-    
+    break;
+  case "/htmlcssactual/Simen-Magnussen_HTML-CSS-CA/product/gears-of-war-3.html":
     try {
-        
-        const queryString = document.location.search;
-        const params = new URLSearchParams(queryString);
-        const id = params.get("id");
-
-        const url = "https://api.noroff.dev/api/v1/gamehub/" + id;
-
-        const response = await fetch (url);
-        const game = await response.json();
-        
-        renderGame();
+        const id = getId();
+        const newURL = url + "/" + id;
+        const title = await getGames(newURL);
+        renderGame(title);
+    } catch (error) {
+      console.log("An error occurred!", error);
     }
-    catch (error) {
-        console.log(error);
-    }
+    break;
+  default:
+     try {
+       renderHome(newReleases, onSale, favorites, parentNewReleases, parentOnSale, parentFanFavorites, heading1Home, heading2Home, heading3Home);
+     } catch (error) {
+       console.log("An error occurred!", error);
+     }
 }
-
-function renderGame(game) {
-    const gamePage = document.querySelector ("section")
-    gamePage.innerHTML += `<h1>${game.title}</h1>
-    <figure>
-      <img src="${game.image}" />
-    </figure>
-    <section class="product-page-pics">
-      <figure>
-        <img
-          src="${game.image}"
-          alt="picture of ${game.title} covercover"
-        />
-      </figure>
-      <figure>
-        <img src"${game.image}" alt="picture of ${game.title} cover" />
-      </figure>
-      <figure>
-        <img src"${game.image}" alt="picture of ${game.title} cover" />
-      </figure>
-      <figure>
-        <img src"${game.image}" alt="picture of ${game.title} cover" />
-      </figure>
-    </section>
-    <p>
-      ${game.description}
-    </p>
-    <section class="cta">
-      <h2>Buy ${game.title}</h2>
-      <div class="price-and-atc">
-        <p>$ ${game.price}</p>
-        <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
-        <button class="wishlist">Wishlist</button>
-      </div>
-    </section>` 
-  }
-  

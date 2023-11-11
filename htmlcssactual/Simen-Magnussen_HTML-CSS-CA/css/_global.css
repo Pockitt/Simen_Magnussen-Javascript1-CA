@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: "Thuner";
     src: url(../css/Thuner.otf) format("opentype"), local("Thuner");
-}
+} */
 
 header {
     background-color: #16C61D;
-    background-image: url("images/GameHub_Logo.png");
+    /* background-image: url("../images/GameHub_Logo.png"); */
     width: 100%; min-height: 100px;  
 }
 
