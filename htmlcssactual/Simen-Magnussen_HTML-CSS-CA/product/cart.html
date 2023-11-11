@@ -30,15 +30,15 @@
     <main>
       <h1>Shopping cart</h1>
       <div class="cart-item">
-        <a href="/product/gears-of-war-3.html"
-          ><img src="../images/Gears/cover.jpg" alt="Gears of War 3"
+        <a href=""
+          ><img src="${results[i].image}" alt="Picture of ${results.title}"
         /></a>
-        <p>1 x Gears of War 3</p>
-        <p>$ 30</p>
+        <p>1 x ${title}</p>
+        <p>$ ${price}</p>
       </div>
       <div class="cart-total">
         <p>Item(s) will be available for download after purchase is complete</p>
-        <p>Total: $ 30</p>
+        <p>Total: $ ${price}</p>
       </div>
       <div class="cart-cta">
         <a href="checkout.html"><button class="btn-ok">Checkout</button></a>

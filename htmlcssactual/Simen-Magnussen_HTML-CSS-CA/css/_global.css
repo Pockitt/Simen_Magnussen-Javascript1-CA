@@ -25,7 +25,8 @@ body {
     min-height: 100vh;
 }
 
-main {
+main,
+.game-info {
     background-color: #132747;
     max-width: 1000px;
     width: 100%;

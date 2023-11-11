@@ -31,12 +31,12 @@
       <h1>Checkout</h1>
       <section class="checkout">
         <div class="checkout-summary">
-          <img src="../images/Gears/cover.jpg" alt="Gears of War 3" />
-          <p>1 x Gears of War 3</p>
-          <p>$ 30</p>
+          <img src="${.image}" alt="Picture of ${.title}" />
+          <p>1 x ${title}</p>
+          <p>$ ${price}</p>
           <p>Coupon</p>
           <input type="text" placeholder="Secret code..." />
-          <p>Total: $ 30</p>
+          <p>Total: $ ${price}</p>
         </div>
         <div class="form">
           <input type="text" name="" id="" placeholder="Email@address.pls" />
@@ -46,11 +46,9 @@
           <input type="text" name="" id="" placeholder="MM/YY" />
           <input type="text" name="" id="" placeholder="CCV" />
           <input type="checkbox" name="Terms" id="" />
-          <!-- <label for="Terms">
+          <label for="Terms">
             I have read and agree to the terms of
-            <u>Game Hub User Agreement</u></label> -->
-          <p>
-            I have read and agree to the terms of <u>Game Hub User Agreement</u>
+            <u>Game Hub User Agreement</u></label>
           </p>
         </div>
       </section>

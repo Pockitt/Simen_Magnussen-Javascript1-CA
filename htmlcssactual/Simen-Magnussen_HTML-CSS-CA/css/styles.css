@@ -1,10 +1,10 @@
-@import url(./_mediaqueries.css);
-@import url(./_global.css);
+@import url(./_collection.css);
+@import url(./_contact.css);
 @import url(./_navigation.css);
 @import url(./_store-page.css);
 @import url(./_product-page.css);
-@import url(./_collection.css);
-@import url(./_contact.css);
+@import url(./_mediaqueries.css);
+@import url(./_global.css);
 
 img {
     width: 100%;

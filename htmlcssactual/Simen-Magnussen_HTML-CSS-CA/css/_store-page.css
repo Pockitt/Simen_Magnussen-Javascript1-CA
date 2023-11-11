@@ -82,6 +82,7 @@ figure {
 }
 
 .card-price {
+    display: flex;
     margin-right: 30px;
     margin-bottom: 30px;
     text-align: right;

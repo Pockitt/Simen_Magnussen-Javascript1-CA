@@ -1,190 +1,140 @@
-async function getGameHub () {
-    const url = "https://api.noroff.dev/api/v1/gamehub";
-    const response = await fetch (url);
-    const results = await response.json();
-    console.log(results);
-    return results;
+
+// import { renderGames } from "./render/renderGames.js";
+// import { renderGame } from "./render/renderGame.js";
+
+if (window.location.pathname === "index.html") {
+    getGames();
+    renderGames();
 }
 
-let results = await getGameHub ();
-console.log(results);
+if (window.location.pathname === "gears-of-war-3.html") {
+    getAndRenderGame();
+}
 
 
+// getGames.js
 
-// Template - Home/Store product display
+export async function getGames () {
+    try {
+        const url = "https://api.noroff.dev/api/v1/gamehub";
+        const response = await fetch (url);
+        const games = await response.json();
+        return games;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
 
-{/* <div class="card">
-        <figure>
-          <a href="product/gears-of-war-3.html">
-            <img src="images/Hunt/cover.jpg" alt="picture of Hunt:Showdown" />
-          </a>
-        </figure>
-        <div class="card-details">
-          <h3>Hunt:Showdown</h3>
-          <div class="card-images">
-            <figure>
-              <img
-                class="card-images"
-                src="images/Hunt/cover.jpg"
-                alt="picture of Hunt:Showdown"
-              />
-            </figure>
-            <figure>
-              <img
-                class="card-images"
-                src="images/Hunt/cover.jpg"
-                alt="picture of Hunt:Showdown"
-              />
-            </figure>
-            <figure>
-              <img
-                class="card-images"
-                src="images/Hunt/cover.jpg"
-                alt="picture of Hunt:Showdown"
-              />
-            </figure>
-            <figure>
-              <img
-                class="card-images"
-                src="images/Hunt/cover.jpg"
-                alt="picture of Hunt:Showdown"
-              />
-            </figure>
-          </div>
-          <div class="card-price">$ 35</div>
-        </div>
-      </div> */}
-
-function makeHTML() {
+// renderGames.js
+// import { getGames } from "../data/getGames.js"
    
-   const gameCard = document.querySelector("main")
-   for (let i = 0; i < results.length; i++) {
-     console.log(results[i]);
-     gameCard.innerHTML += ` <div class="card">
-     <figure>
-       <a href="">
-         <img src="${results[i].image}" alt="picture of ${results[i].title}cover" />
-       </a>
-     </figure>
-     <div class="card-details">
-       <h3 class="cardGameTitle">${results[i].title}</h3>
-       <div class="card-images">
-         <figure>
-           <img
-             class="card-images"
-             src="${results[i].image}"
-             alt="picture of ${results[i].title}cover"
-              />
-         </figure>
-         <figure>
-           <img
-             class="card-images"
-             src="${results[i].image}"
-             alt="picture of ${results[i].title}cover"
-            />
-         </figure>
-         <figure>
-           <img
-             class="card-images"
-             src="${results[i].image}"
-             alt="picture of ${results[i].title}cover"
-            />
-         </figure>
-         <figure>
-           <img
-             class="card-images"
-             src="${results[i].image}"
-             alt="picture of ${results[i].title}cover"
-            />
-         </figure>
-       </div>
-         <div class="card-price>
-           <p>"${results[i].price}"</p>
-         </div>
-     </div>
-   </div> `
-   }
- }
-
-makeHTML();
-
-      
-
-// Template - Product page
-
-{/* `<h1>Gears of War 3</h1>
-      <figure>
-        <img src="../images/Gears/cover.jpg" />
-      </figure>
-      <section class="product-page-pics">
+export async function renderGames() {
+  const games = await getGames();
+  const gameCard = document.querySelector("main")
+  for (let i = 0; i < games.length; i++) {
+    gameCard.innerHTML += ` <div class="card">
+    <figure>
+      <a href="./product/gears-of-war-3.html?id=${games[i].id}">
+        <img src="${games[i].image}" alt="picture of ${games[i].title} cover" />
+      </a>
+    </figure>
+    <div class="card-details">
+      <h3 class="cardGameTitle">${games[i].title}</h3>
+      <div class="card-images">
         <figure>
           <img
-            src="../images/Gears/action1.jpg"
-            alt="Gears of war action picture"
-          />
+            class="card-images"
+            src="${games[i].image}"
+            alt="picture of ${games[i].title} cover"
+             />
         </figure>
         <figure>
-          <img src="../images/Gears/action2.jpg" alt="Characters" />
+          <img
+            class="card-images"
+            src="${games[i].image}"
+            alt="picture of ${games[i].title} cover"
+           />
         </figure>
         <figure>
-          <img src="../images/Gears/action3.jpg" alt="Chainsaw duel" />
+          <img
+            class="card-images"
+            src="${games[i].image}"
+            alt="picture of ${games[i].title} cover"
+           />
         </figure>
         <figure>
-          <img src="../images/Gears/action4.jpg" alt="" />
+          <img
+            class="card-images"
+            src="${games[i].image}"
+            alt="picture of ${games[i].title} cover"
+           />
         </figure>
-      </section>
-      <p>
-        Gears of War 3 is a heart-pounding and action-packed third-person
-        shooter that delivers an emotional and thrilling conclusion to the Gears
-        of War trilogy. With its intense combat, gripping storyline, impressive
-        graphics, and diverse gameplay modes, it is a must-play for fans of the
-        franchise and anyone who enjoys a thrilling and immersive gaming
-        experience.
-      </p>
-      <p>
-        It is the third installment in the highly popular Gears of War
-        franchise, and it continues the thrilling story of humanity's fight for
-        survival against the monstrous Locust Horde, a race of underground
-        creatures that threaten to wipe out humanity on Sera.
-      </p>
-      <section class="cta">
-        <h2>Buy Gears of War 3</h2>
-        <div class="price-and-atc">
-          <p>$ 30</p>
-          <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
-          <button class="wishlist">Wishlist</button>
-        </div>
-      </section>` */}
+      </div>
+      <div class="card-price">
+          <p>$ ${games[i].price}</p>
+      </div>
+    </div>
+  </div> `
+  }
+}
 
-      // `<h1>${title}</h1>
-      // <figure>
-      //   <img src="../images" />
-      // </figure>
-      // <section class="product-page-pics">
-      //   <figure>
-      //     <img
-      //       src="${results[i].image}"
-      //       alt="picture of ${results[i].title} covercover"
-      //     />
-      //   </figure>
-      //   <figure>
-      //     <img src"${results[i].image}" alt="picture of ${results[i].title} cover" />
-      //   </figure>
-      //   <figure>
-      //     <img src"${results[i].image}" alt="picture of ${results[i].title} cover" />
-      //   </figure>
-      //   <figure>
-      //     <img src"${results[i].image}" alt="picture of ${results[i].title} cover" />
-      //   </figure>
-      // </section>
-      // <p>
-      //   ${results[i].description}
-      // </p>
-      // <section class="cta">
-      //   <h2>Buy ${results[i].title}</h2>
-      //   <div class="price-and-atc">
-      //     <p>${results[i].price}</p>
-      //     <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
-      //     <button class="wishlist">Wishlist</button>
-      //   </div>
-      // </section>` 
+
+//getAndRenderGame.js
+
+export async function getAndRenderGame() {
+    
+    try {
+        
+        const queryString = document.location.search;
+        const params = new URLSearchParams(queryString);
+        const id = params.get("id");
+
+        const url = "https://api.noroff.dev/api/v1/gamehub/" + id;
+
+        const response = await fetch (url);
+        const game = await response.json();
+        
+        renderGame();
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+function renderGame(game) {
+    const gamePage = document.querySelector ("section")
+    gamePage.innerHTML += `<h1>${game.title}</h1>
+    <figure>
+      <img src="${game.image}" />
+    </figure>
+    <section class="product-page-pics">
+      <figure>
+        <img
+          src="${game.image}"
+          alt="picture of ${game.title} covercover"
+        />
+      </figure>
+      <figure>
+        <img src"${game.image}" alt="picture of ${game.title} cover" />
+      </figure>
+      <figure>
+        <img src"${game.image}" alt="picture of ${game.title} cover" />
+      </figure>
+      <figure>
+        <img src"${game.image}" alt="picture of ${game.title} cover" />
+      </figure>
+    </section>
+    <p>
+      ${game.description}
+    </p>
+    <section class="cta">
+      <h2>Buy ${game.title}</h2>
+      <div class="price-and-atc">
+        <p>$ ${game.price}</p>
+        <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
+        <button class="wishlist">Wishlist</button>
+      </div>
+    </section>` 
+  }
+  
