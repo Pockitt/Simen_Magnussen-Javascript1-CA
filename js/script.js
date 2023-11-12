@@ -26,8 +26,10 @@ switch(location.pathname) {
         renderGame(title);
     } catch (error) {
         console.log(error);
-        gamePage.innerHTML = "";
-        gamePage.innerHTML = "Oops! An error occurred!";
+        main.innerHTML = "";
+        main.innerHTML = `<div>
+                              <h1>Oops! An error occurred!</h1>
+                          </div>`
     }
     break;
   default:
