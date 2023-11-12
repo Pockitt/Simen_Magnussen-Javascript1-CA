@@ -26,8 +26,8 @@ switch(location.pathname) {
         renderGame(title);
     } catch (error) {
         console.log(error);
-        main.innerHTML = "";
-        main.innerHTML = `<div>
+        favorites.innerHTML = "";
+        favorites.innerHTML = `<div>
                               <h1>Oops! An error occurred!</h1>
                           </div>`
     }
