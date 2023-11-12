@@ -10,7 +10,7 @@ import { getGames } from "./data/getGames.js";
 
 // actual case: /collection.html
 switch(location.pathname) {
-  case "/collection":
+  case "/collectio":
     try {
        renderCollection(favorites, newReleases, fifteen, parentMostPlayed, parentNewGames, allGames, heading1, heading2, heading3)
     } catch (error) {
@@ -18,18 +18,18 @@ switch(location.pathname) {
       parentMostPlayed.innerHTML = "Oops! An error occurred!";
     }
     break;
-  case "/product/gears-of-war-3.":
+  case "/product/gears-of-war-3.html":
     try {
         const id = getId();
         const newURL = url + "/" + id;
         const title = await getGames(newURL);
         renderGame(title);
     } catch (error) {
-        console.log(error);
-        favorites.innerHTML = "";
-        favorites.innerHTML = `<div>
-                              <h1>Oops! An error occurred!</h1>
-                          </div>`
+        // console.log(error);
+        // favorites.innerHTML = "";
+        // favorites.innerHTML = `<div>
+        //                       <h1>Oops! An error occurred!</h1>
+        //                   </div>` //didn't work
     }
     break;
   default:
