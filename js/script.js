@@ -15,7 +15,7 @@ switch(location.pathname) {
        renderCollection(favorites, newReleases, fifteen, parentMostPlayed, parentNewGames, allGames, heading1, heading2, heading3)
     } catch (error) {
       console.log(error);
-      parent.innerHTML = "Oops! An error occurred!";
+      parentMostPlayed.innerHTML = "Oops! An error occurred!";
     }
     break;
   case "/product/gears-of-war-3.":
@@ -26,7 +26,7 @@ switch(location.pathname) {
         renderGame(title);
     } catch (error) {
         console.log(error);
-        parent.innerHTML = "Oops! An error occurred!";
+        title.innerHTML = "Oops! An error occurred!";
     }
     break;
   default:
