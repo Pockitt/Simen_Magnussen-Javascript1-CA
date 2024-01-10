@@ -34,8 +34,8 @@ export function renderGame(game) {
       </div>
     </section>
       <section class="product-reviews">
-        <div class="gray-bar">
-          <h3>Reviews (467)</h3>
+        <div class="gray-bar, review-bar">
+          <h3 class="reviews-h">Reviews (467)</h3>
         </div>
         <div class="review">
           <img

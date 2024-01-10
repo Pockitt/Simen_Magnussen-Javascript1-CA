@@ -1,4 +1,5 @@
-.gray-bar {
+.gray-bar,
+.review-bar {
     display: flex;
     flex: 1;
     flex-wrap: wrap;

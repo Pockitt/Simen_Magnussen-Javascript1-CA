@@ -85,3 +85,14 @@ p {
     font-family: "Kanit", Verdana, sans-serif;
     color: white;
 }
+
+.review-bar,
+.sys-req-bar,
+.sys-req {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.price-and-atc{
+    border-radius: 10px;
+}
