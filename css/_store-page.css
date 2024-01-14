@@ -64,6 +64,7 @@ figure {
 
 .cardGameTitle {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .card-details {
@@ -85,9 +86,10 @@ figure {
 .card-price {
     display: flex;
     margin-right: 30px;
+    margin-left: 20px;
     margin-bottom: 30px;
     text-align: right;
     color: #FFF;
     font-family: 'Kanit', Verdana;
-    font-size: larger;
+    font-size: 1.5rem;
 }

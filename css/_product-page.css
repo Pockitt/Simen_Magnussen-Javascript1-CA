@@ -1,3 +1,6 @@
+.product-page-main-img {
+    max-height: 800px;
+}
 .product-page-pics {
     margin-top: 20px;
     display: flex;

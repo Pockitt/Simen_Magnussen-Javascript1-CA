@@ -3,7 +3,7 @@ export function renderGame(game) {
     const title = document.querySelector ("title");
     gamePage.innerHTML = `<h1>${game.title}</h1>
     <figure>
-      <img src="${game.image}" />
+      <img class="product-page-main-img" src="${game.image}" />
     </figure>
     <section class="product-page-pics">
       <figure>
