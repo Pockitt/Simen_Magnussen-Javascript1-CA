@@ -11,11 +11,13 @@
     max-height: 300px;
     background-color: #2A323F;
     text-align: center;
+    border-radius: 10px;
 }
 
 .contact-icon img {
     margin: 0;
     padding: 0;
+    border-radius: 10px;
 }
 
 .tickets {

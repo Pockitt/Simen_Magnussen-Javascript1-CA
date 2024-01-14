@@ -1,0 +1,15 @@
+.checkout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.checkout-cta {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.terms {
+    color: #FFF;
+}
