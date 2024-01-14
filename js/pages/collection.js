@@ -5,8 +5,8 @@ export const parentNewGames = document.querySelector(".new-games-container");
 export const allGames = document.querySelector(".all-games")
 
 
-export const heading1 = `<h2>Most Played</h2>`
-export const heading2 = `<h2>New Games</h2>`
+export const heading1 = `<h2 class="collection-game-pics">Most Played</h2>`
+export const heading2 = `<h2 class="collection-game-pics">New Games</h2>`
 export const heading3 = `<div class="gray-bar all-games">
                   <h3>All Games (15)</h3>
 <input name="search" type="text" placeholder="Search..." class="search" />
