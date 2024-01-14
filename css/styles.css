@@ -28,6 +28,7 @@ button {
 
 .btn-ok {
     background-color: #16C61D;
+    color: black;
     width: 250px;
     height: 60px;
 }
