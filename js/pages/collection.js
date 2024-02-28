@@ -19,9 +19,8 @@ export function createHTML(data, parent, heading) {
   parent.innerHTML = "";
   parent.innerHTML = heading;
   for (let i = 0; i < data.length; i++) {
-    parent.innerHTML += `<img src="${data[i].image}" alt="Picture of ${data[i].title} cover">`;
+    parent.innerHTML += `<img src="${data[i].images[0].image}" alt="Picture of ${data[i].name} cover">`;
   }
-  
 }
 
 export function renderCollection(data1, data2, data3, parent1, parent2, parent3, heading1, heading2, heading3) {

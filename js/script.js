@@ -35,7 +35,7 @@ switch(location.pathname) {
     break;
   default:
      try {
-        renderHome(newReleases, onSale, favorites,   parentNewReleases, parentOnSale, parentFanFavorites,  heading1Home, heading2Home, heading3Home);
+        renderHome(newReleases, onSale, favorites, parentNewReleases, parentOnSale, parentFanFavorites, heading1Home, heading2Home, heading3Home);
      } catch (error) {
         console.log(error);
         // couldn't make it work
@@ -43,16 +43,16 @@ switch(location.pathname) {
 }
 
 // Martin Krüger made this in a class session 
-export const cart = {
-  items: [],
-  addToCart: function (product) {
-    console.log(product);
-    this.items.push(product);
-  },
-  clearCart: function () {
+// export const cart = {
+//   items: [],
+//   addToCart: function (product) {
+//     console.log(product);
+//     this.items.push(product);
+//   },
+//   clearCart: function () {
     
-  },
-  printItems: function () {
-    console.log(this.items);
-  },
-};
+//   },
+//   printItems: function () {
+//     console.log(this.items);
+//   },
+// };

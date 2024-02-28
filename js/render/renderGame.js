@@ -1,34 +1,34 @@
 export function renderGame(game) {
     const gamePage = document.querySelector ("main");
     const title = document.querySelector ("title");
-    gamePage.innerHTML = `<h1>${game.title}</h1>
+    gamePage.innerHTML = `<h1>${game.name}</h1>
     <figure>
-      <img class="product-page-main-img" src="${game.image}" />
+      <img class="product-page-main-img" src="${game.images[0].src}" />
     </figure>
     <section class="product-page-pics">
       <figure>
         <img
-          src="${game.image}"
-          alt="picture of ${game.title} cover"
+          src="${game.images[0].src}"
+          alt="picture of ${game.name} cover"
         />
       </figure>
       <figure>
-        <img src="${game.image}" alt="picture of ${game.title} cover" />
+        <img src="${game.images[0].src}" alt="picture of ${game.name} cover" />
       </figure>
       <figure>
-        <img src="${game.image}" alt="picture of ${game.title} cover" />
+        <img src="${game.images[0].src}" alt="picture of ${game.name} cover" />
       </figure>
       <figure>
-        <img src="${game.image}" alt="picture of ${game.title} cover" />
+        <img src="${game.images[0].src}" alt="picture of ${game.name} cover" />
       </figure>
     </section>
     <p>
       ${game.description}
     </p>
     <section class="cta">
-      <h2>Buy ${game.title}</h2>
+      <h2>Buy ${game.name}</h2>
       <div class="price-and-atc">
-        <p>$ ${game.price}</p>
+        <p>$ ${game.prices.price}</p>
         <a href="cart.html"><button class="btn-ok">Add to cart</button></a>
         <button class="wishlist">Wishlist</button>
       </div>
@@ -96,5 +96,5 @@ export function renderGame(game) {
           </div>
         </div>
       </section>` 
-      title.innerHTML = `Game Hub | ${game.title}`
+      title.innerHTML = `Game Hub | ${game.name}`
   }

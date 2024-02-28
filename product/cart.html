@@ -45,14 +45,14 @@
       <h1>Shopping cart</h1>
       <div class="cart-item">
         <a href=""
-          ><img src="${.title.image}" alt="Picture of ${.title}"
+          ><img src="${.name.images[0].src}" alt="Picture of ${.name}"
         /></a>
-        <p>1 x ${.title}</p>
-        <p>$ ${.price}</p>
+        <p>1 x ${.name}</p>
+        <p>$ ${.prices.price}</p>
       </div>
       <div class="cart-total">
         <p>Item(s) will be available for download after purchase is complete</p>
-        <p>Total: $ ${.price}</p>
+        <p>Total: $ ${.price}</p>s
       </div>
       <div class="cart-cta">
         <a href="checkout.html"><button class="btn-ok">Checkout</button></a>
