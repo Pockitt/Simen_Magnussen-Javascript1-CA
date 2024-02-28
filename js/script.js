@@ -15,8 +15,7 @@ switch(location.pathname) {
        renderCollection(favorites, newReleases, fifteen, parentMostPlayed, parentNewGames, allGames, heading1, heading2, heading3)
 
     } catch (error) {
-      console.log(error);
-      // couldn't make it work
+      alert(`An error has occured. Details: ${error}`);
     }
     break;
 
@@ -27,18 +26,16 @@ switch(location.pathname) {
         const title = await getGames(newURL);
         renderGame(title);
 
-    } catch (error) {
-        console.log(error);
-        // couldn't make it work
+    } catch(error) {
+      alert(`An error has occured. Details: ${error}`);
     }
 
     break;
   default:
      try {
         renderHome(newReleases, onSale, favorites, parentNewReleases, parentOnSale, parentFanFavorites, heading1Home, heading2Home, heading3Home);
-     } catch (error) {
-        console.log(error);
-        // couldn't make it work
+     } catch(error) {
+        alert(`An error has occured. Details: ${error}`);
      }
 }
 

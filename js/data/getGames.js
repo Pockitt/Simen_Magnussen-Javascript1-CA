@@ -1,5 +1,3 @@
-import { games } from "./filterData";
-
 export async function getGames (url) {
     try {
         const response = await fetch (url);
@@ -7,6 +5,7 @@ export async function getGames (url) {
             throw(new Error(`Fetch operation failed...`))
         }
         const games = await response.json();
+        console.log(games)
         return games;
     } catch(error) {
         alert(`An error has occured. Details: ${error}`);
